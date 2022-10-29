@@ -1,3 +1,3 @@
 
-h
-8src/main/java/edu/itstep/albums/AlbumViewController.java,4\4\448cafee87e147e14cd811d3f27b3268b1ae8ae9
+e
+5src/main/java/edu/itstep/albums/HelloApplication.java,c\5\c5cb3b6a166cbc2eade18e9a55809e569c4dd544

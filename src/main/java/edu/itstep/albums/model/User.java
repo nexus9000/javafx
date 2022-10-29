@@ -1,11 +1,15 @@
 package edu.itstep.albums.model;
 
+import edu.itstep.sql.SqlOps;
+
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 //POJO class
 public class User implements Serializable {
     private long id;
-    private String UserName;
+    private String userName;
     private String password;
 
     public User() {
@@ -21,11 +25,11 @@ public class User implements Serializable {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -36,5 +40,8 @@ public class User implements Serializable {
         this.password = password;
     }
 
-
+    public boolean isUserAuthenticated(Connection conn)throws SQLException {
+        boolean result = SqlOps.checkUserName(conn, userName, password);
+        return result;
+    }
 }

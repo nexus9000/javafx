@@ -3,12 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.itstep.albums.AlbumViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.itstep.albums.controllers.AlbumViewController">
    <children>
-      <TableView layoutX="33.0" layoutY="40.0" prefHeight="147.0" prefWidth="264.0">
+      <TableView fx:id="albumsTable" editable="true" layoutX="16.0" layoutY="40.0" prefHeight="450.0" prefWidth="590.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="albums" prefWidth="350.0" text="ALBUMS" />
+          <TableColumn fx:id="years"  prefWidth="200" text="YEARS"/>
         </columns>
       </TableView>
    </children>
