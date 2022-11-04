@@ -6,13 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
 public class AlbumApplication extends Application {
    public static Stage stageL;
     @Override
-    public void start( Stage stage) throws IOException {
+    public void start(@NotNull Stage stage) throws IOException {
         LogInController hello = new LogInController();
         FXMLLoader fxmlLoader = new FXMLLoader(AlbumApplication.class.getResource("login-view.fxml"));
         fxmlLoader.setController(hello);
@@ -25,7 +26,9 @@ public class AlbumApplication extends Application {
         stageL = stage;
         stage.show();
 
+
     }
+
 
     public static void main(String[] args) {
         launch();

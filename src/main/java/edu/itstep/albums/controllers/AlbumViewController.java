@@ -2,10 +2,12 @@ package edu.itstep.albums.controllers;
 
 import edu.itstep.albums.model.Albums;
 import edu.itstep.albums.model.ConnectionDB;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,7 +25,8 @@ public class AlbumViewController implements Initializable {
     private TableView albumsTable;
     @FXML
     private TableColumn<Albums,String> id, albums;
-
+    @FXML
+    private  MenuItem close;
     private void initCols(){
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         albums.setCellValueFactory(new PropertyValueFactory<>("albumName"));
@@ -41,10 +44,15 @@ public class AlbumViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
      try {
+
          initCols();
          loadData();
      }catch(Exception e){
          e.printStackTrace();
      }
+    }
+    @FXML
+    protected void onExit(){
+        Platform.exit();
     }
 }
