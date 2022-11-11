@@ -35,8 +35,10 @@ public class LogInController {
             if (isLoggedUser) {
                 AlbumApplication.stageL.close();
                 AlbumsList list = new AlbumsList();
-                Stage stage = new Stage();
-                list.start(stage);
+               Stage stage = new Stage();
+               list.start(stage);
+
+
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong " +
                         "password or username!", ButtonType.OK, ButtonType.CANCEL);

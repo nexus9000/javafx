@@ -2,6 +2,7 @@ package edu.itstep.albums.controllers;
 
 import edu.itstep.albums.model.Albums;
 import edu.itstep.albums.model.ConnectionDB;
+import edu.itstep.sql.SqlOps;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,8 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AlbumViewController implements Initializable {
@@ -24,35 +24,54 @@ public class AlbumViewController implements Initializable {
     @FXML
     private TableView albumsTable;
     @FXML
-    private TableColumn<Albums,String> id, albums;
+    private TableColumn<Albums, String> id, albums, years;
     @FXML
-    private  MenuItem close;
-    private void initCols(){
+    private MenuItem close;
+
+    private void initCols() {
+        if(id == null){
+            id= new TableColumn<>();
+            albums = new TableColumn<>();
+            years = new TableColumn<>();
+            albumsTable = new TableView();
+        }
+
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         albums.setCellValueFactory(new PropertyValueFactory<>("albumName"));
+        years.setCellValueFactory(new PropertyValueFactory<>("years"));
     }
- private void loadData()throws SQLException,ClassNotFoundException {
-     osList = FXCollections.observableArrayList();
-     ConnectionDB conn = ConnectionDB.getInstance();
-     Connection connection = conn.getConnectionDB();
-     HashMap<Long,String> albumsList = Albums.listAlbums(connection);
-     for(Map.Entry<Long,String> entry : albumsList.entrySet()){
-         osList.add(new Albums(entry.getKey(),entry.getValue()));
-     }//end for loop
-     albumsTable.setItems(osList);
- }
+
+    private void loadData() throws SQLException, ClassNotFoundException {
+        osList = FXCollections.observableArrayList();
+        ConnectionDB conn = ConnectionDB.getInstance();
+        Connection connection = conn.getConnectionDB();
+        ArrayList<Albums> albumsList;
+        albumsList = Albums.listAlbums(connection);
+        for (Albums album : albumsList) {
+            osList.add(album);
+        }//end for loop
+        albumsTable.setItems(osList);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-     try {
+        try {
 
-         initCols();
-         loadData();
-     }catch(Exception e){
-         e.printStackTrace();
-     }
+            initCols();
+            loadData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     @FXML
-    protected void onExit(){
-        Platform.exit();
+    protected void onExit() {
+        try {
+            SqlOps.closeConn();
+        } catch (SQLException sql) {
+            sql.printStackTrace();
+        } finally {
+            Platform.exit();
+        }
     }
 }
