@@ -12,26 +12,6 @@
           <TableColumn fx:id="years" prefWidth="200" text="YEARS" />
         </columns>
       </TableView>
-      <MenuBar layoutY="-2.0" prefHeight="26.0" prefWidth="624.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="open" mnemonicParsing="false" onAction="#onExit" text="Run Album" />
-                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#onExit" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-                  <MenuItem fx:id="open1" mnemonicParsing="false" onAction="#onExit" text="Add Album" />
-              <MenuItem mnemonicParsing="false" text="Delete Album" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+
    </children>
 </AnchorPane>

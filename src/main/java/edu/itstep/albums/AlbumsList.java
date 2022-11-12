@@ -17,7 +17,7 @@ public class AlbumsList extends Application {
     @Override
     public void start(@NotNull Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(AlbumApplication.class.getResource("tabview.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 601, 550);
+        Scene scene = new Scene(fxmlLoader.load(), 620, 550);
        scene.getStylesheets().add(AlbumApplication.class.getResource("album-style.css").toString());
         stage.setTitle("List Music Albums");
         //stage.setIconified(true);
