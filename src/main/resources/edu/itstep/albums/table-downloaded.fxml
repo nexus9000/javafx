@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.itstep.albums.controllers.AlbumViewController">
+   <children>
+      <TableView fx:id="downloadedTable" editable="true" layoutX="16.0" layoutY="40.0" prefHeight="330.0" prefWidth="590.0">
+        <columns>
+          <TableColumn fx:id="user" prefWidth="50.0" text="USER NAME" />
+          <TableColumn fx:id="albumName" prefWidth="250.0" text="ALBUM'S NAME" />
+        </columns>
+      </TableView>
+
+   </children>
+</AnchorPane>
