@@ -37,6 +37,7 @@
           <Tab text="Downloaded" fx:id="downloaded_tab">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <fx:include fx:id="tabDownloadedTable" source="table-downloaded.fxml" />
             </content>
           </Tab>
         </tabs>
