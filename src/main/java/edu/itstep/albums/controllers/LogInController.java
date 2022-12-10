@@ -14,7 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
-public class LogInController {
+  public final class LogInController {
     @FXML
     private TextField userName;
     @FXML
@@ -23,16 +23,17 @@ public class LogInController {
     protected void onButtonClick() {
        logIn();
     }
-    private void logIn(){
+    private final void logIn(){
         User userPojo = new User();
         String user = userName.getText();
-        String password = passwd.getText();
+        StringBuilder password = new StringBuilder(passwd.getText());
         try {
             ConnectionDB conn = ConnectionDB.getInstance();
             userPojo.setUserName(user);
-            userPojo.setPassword(password);
+            userPojo.setPassword(password.toString());
             boolean isLoggedUser = userPojo.isUserAuthenticated(conn.getConnectionDB());
             if (isLoggedUser) {
+                password.delete(0,password.length());
                 AlbumApplication.stageL.close();
                 AlbumsList list = new AlbumsList();
                Stage stage = new Stage();
