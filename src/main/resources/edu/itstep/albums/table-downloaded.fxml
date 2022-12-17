@@ -3,13 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.itstep.albums.controllers.AlbumViewController">
-   <children>
-      <TableView fx:id="downloadedTable" editable="true" layoutX="16.0" layoutY="40.0" prefHeight="330.0" prefWidth="590.0">
-        <columns>
-          <TableColumn fx:id="user" prefWidth="250.0" text="USER NAME" />
-          <TableColumn fx:id="albumName" prefWidth="250.0" text="ALBUM'S NAME" />
-        </columns>
-      </TableView>
-   </children>
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.itstep.albums.controllers.TableController">
+    <children>
+        <TableView fx:id="albumsTable" editable="true" layoutX="16.0" layoutY="40.0" prefHeight="330.0" prefWidth="590.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="albums" prefWidth="250.0" text="ALBUMS" />
+                <TableColumn fx:id="years" prefWidth="100" text="YEARS" />
+                <TableColumn fx:id="checked" editable="false" prefWidth="189.0" sortable="false" text="DOWNLOADED" />
+                <TableColumn fx:id="user" editable="true" prefWidth="189.0" sortable="false" text="USER_NAME" />
+                <TableColumn fx:id="album" editable="true" prefWidth="189.0" sortable="false" text="DOWNLOADED_ALBUM" />
+            </columns>
+        </TableView>
+
+    </children>
 </AnchorPane>

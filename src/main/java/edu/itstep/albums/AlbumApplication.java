@@ -17,6 +17,7 @@ public class AlbumApplication extends Application {
         LogInController hello = new LogInController();
         FXMLLoader fxmlLoader = new FXMLLoader(AlbumApplication.class.getResource("login-view.fxml"));
         fxmlLoader.setController(hello);
+
         Scene scene = new Scene(fxmlLoader.load(), 350, 200);
         scene.getStylesheets().add(AlbumApplication.class.getResource("stylesheet.css").toString());
         stage.getIcons().add(new Image(AlbumApplication.class.getResourceAsStream("logo.png")));
