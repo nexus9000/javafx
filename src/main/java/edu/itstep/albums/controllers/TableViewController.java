@@ -2,15 +2,14 @@ package edu.itstep.albums.controllers;
 
 import edu.itstep.albums.model.Albums;
 import edu.itstep.albums.model.ConnectionDB;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -34,7 +33,7 @@ public class TableViewController implements Initializable {
     @FXML
     private TableColumn<Albums, String> id, albums, years;
     @FXML
-    private TableColumn<Albums, Boolean> checked;
+    private TableColumn<Albums, CheckBox> checked;
 
 
     private void initCols() {
@@ -53,8 +52,9 @@ public class TableViewController implements Initializable {
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         albums.setCellValueFactory(new PropertyValueFactory<>("albumName"));
         years.setCellValueFactory(new PropertyValueFactory<>("years"));
-        checked.setCellValueFactory(c->new SimpleBooleanProperty(c.getValue().getChecked()));
-        checked.setCellFactory(p -> new CheckBoxTableCell<>());
+       // checked.setCellValueFactory(c->new SimpleBooleanProperty(c.getValue().getChecked()));
+        //checked.setCellFactory(p -> new CheckBoxTableCell<>());
+        checked.setCellValueFactory(new PropertyValueFactory<>("checked"));
 
     }
 
@@ -75,6 +75,7 @@ public class TableViewController implements Initializable {
                 onEdit();
             }
         });
+
     }
     public void onEdit() {
         // check the table's selected item and get selected item

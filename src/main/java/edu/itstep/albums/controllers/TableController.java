@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,7 +31,7 @@ public class TableController implements Initializable {
     @FXML
     private TableColumn<Albums, String> id, albums, years,user,album;
     @FXML
-    private TableColumn<Albums, Boolean> checked;
+    private TableColumn<Albums, CheckBox> checked;
 
 
     private void initCols() {
@@ -38,7 +39,7 @@ public class TableController implements Initializable {
             id = new TableColumn<>();
             albums = new TableColumn<Albums,String>();
             years = new TableColumn<Albums,String>();
-            checked = new TableColumn<Albums, Boolean>();
+            checked = new TableColumn<Albums, CheckBox>();
             albumsTable = new TableView<Albums>();
             user = new TableColumn<Albums,String>();
             album = new TableColumn<Albums,String>();

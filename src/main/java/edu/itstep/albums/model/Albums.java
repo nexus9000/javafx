@@ -1,5 +1,6 @@
 package edu.itstep.albums.model;
 
+import javafx.scene.control.CheckBox;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
@@ -14,7 +15,7 @@ public class Albums implements Serializable {
     private Long id;
     private String albumName;
     private String years;
-    private Boolean isChecked = true;
+    private CheckBox isChecked ;
     private String user;
     private String albums;
     public String getUser() {
@@ -27,21 +28,21 @@ public class Albums implements Serializable {
 
 
 
-    public Albums(Long id, String albumName, String years, Boolean isChecked){
+    public Albums(Long id, String albumName, String years, String isChecked){
        this.id = id;
        this.albumName = albumName;
        this.years = years;
-       this.isChecked = isChecked;
+       this.isChecked = new CheckBox();
     }
    public Albums(String albums, String user){
        this.albums = albums;
        this.user = user;
    }
-    public Boolean getChecked() {
+    public CheckBox getChecked() {
         return isChecked;
     }
 
-    public void setChecked(Boolean checked) {
+    public void setChecked(CheckBox checked) {
         this.isChecked = checked;
     }
     public static ArrayList<Albums> listUser(Connection conn)throws SQLException {
@@ -72,7 +73,7 @@ public class Albums implements Serializable {
             Long id = rs.getLong(1);
             String album = rs.getString(2);
             String years = rs.getString(3);
-            Albums album1 = new Albums(id,album,years,false);
+            Albums album1 = new Albums(id,album,years,"");
             albums.add(album1);
         }
         ps.close();
