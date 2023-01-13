@@ -2,7 +2,7 @@ package edu.itstep.albums.controllers;
 
 import edu.itstep.albums.AlbumApplication;
 import edu.itstep.albums.AlbumsList;
-import edu.itstep.albums.model.ConnectionDB;
+import edu.itstep.albums.model.ConnectionMySqlDb;
 import edu.itstep.albums.model.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -28,7 +28,8 @@ import org.jetbrains.annotations.NotNull;
         String user = userName.getText();
         StringBuilder password = new StringBuilder(passwd.getText());
         try {
-            ConnectionDB conn = ConnectionDB.getInstance();
+            //ConnectionDB conn = ConnectionDB.getInstance();
+            ConnectionMySqlDb conn = ConnectionMySqlDb.getInstance();
             userPojo.setUserName(user);
             userPojo.setPassword(password.toString());
             boolean isLoggedUser = userPojo.isUserAuthenticated(conn.getConnectionDB());
