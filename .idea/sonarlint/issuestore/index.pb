@@ -7,8 +7,6 @@ _
 /src/main/java/edu/itstep/albums/model/User.java,5\6\56f9cdd161a2be8db2c31e9efa2497049a4d3205
 e
 5src/main/java/edu/itstep/albums/AlbumApplication.java,c\2\c27da042df1ad3babb5c8c33165d71092a2931b2
-_
-/src/main/java/edu/itstep/albums/AlbumsList.java,f\4\f4dbedebff6fed854777aa4f9bd906ba9cb52570
 t
 Dsrc/main/java/edu/itstep/albums/controllers/AlbumViewController.java,f\e\fe4254d8eaa499283d2167d9f828d4e76463d1eb
 e
