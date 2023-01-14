@@ -46,6 +46,7 @@ public final class LogInController {
             exc.printStackTrace();
             try {
                 isLoggedUser = userPojo.isUserAuthenticated(connSQLite.getConnectionDB());
+                System.out.println( isLoggedUser);
             }catch(SQLException | ClassNotFoundException sql){
                 sql.printStackTrace();
             }
