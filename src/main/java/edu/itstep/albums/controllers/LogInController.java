@@ -5,6 +5,7 @@ import edu.itstep.albums.AlbumsList;
 import edu.itstep.albums.model.ConnectionDB;
 import edu.itstep.albums.model.ConnectionMySqlDb;
 import edu.itstep.albums.model.User;
+import edu.itstep.albums.tools.Security;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -40,8 +41,9 @@ public final class LogInController {
             conn = ConnectionMySqlDb.getInstance();//connection to MySQL
             userPojo.setUserName(user);
             userPojo.setPassword(password.toString());
-            isLoggedUser = userPojo.isUserAuthenticated(conn.getConnectionDB());
-
+            //isLoggedUser = userPojo.isUserAuthenticated(conn.getConnectionDB());
+            String hashedPassword = userPojo.getPassword(conn.getConnectionDB(), user);
+            isLoggedUser = Security.comparePassword(password.toString(),hashedPassword );
         } catch (Exception exc) {
             exc.printStackTrace();
             try {

@@ -104,6 +104,15 @@ public class Albums implements Serializable {
         this.albumName = albumName;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Albums{" +
+                "id=" + id +
+                ", albumName='" + albumName + '\'' +
+                ", years='" + years + '\'' +
+                ", isChecked=" + isChecked +
+                ", user='" + user + '\'' +
+                ", albums='" + albums + '\'' +
+                '}';
+    }
 }

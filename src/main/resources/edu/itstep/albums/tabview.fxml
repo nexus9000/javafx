@@ -54,6 +54,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="download" layoutX="506.0" layoutY="442.0" mnemonicParsing="false" onAction="#startDownload" prefHeight="25.0" prefWidth="98.0" text="Button" />
+
    </children>
+    <Button fx:id="download" layoutX="510.0" layoutY="442.0" mnemonicParsing="false" onAction="#startDownload" prefHeight="25.0" prefWidth="81.0" text="Button" />
 </AnchorPane>

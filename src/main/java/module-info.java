@@ -4,7 +4,11 @@ module edu.itstep.albums {
     requires sql.module;
     requires java.sql;
     requires org.jetbrains.annotations;
-
+    requires jbcrypt;
+    requires lombok;
+    requires jakarta.persistence;
+    requires org.hibernate.orm.core;
+    requires java.naming;
 
     opens edu.itstep.albums to javafx.fxml;
     exports edu.itstep.albums;

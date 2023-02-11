@@ -4,6 +4,7 @@ import edu.itstep.albums.model.Albums;
 import edu.itstep.albums.model.ConnectionDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
@@ -96,5 +97,6 @@ public class TableController implements Initializable {
     }
 
 
-
+    public void startDownload(ActionEvent actionEvent) {
+    }
 }

@@ -30,6 +30,14 @@ public class TableViewController implements Initializable {
     @FXML
     private TableView albumsTable;
 
+    public TableView getAlbumsTable() {
+        return albumsTable;
+    }
+
+    public void setAlbumsTable(TableView albumsTable) {
+        this.albumsTable = albumsTable;
+    }
+
     @FXML
     private TableColumn<Albums, String> id, albums, years;
     @FXML
@@ -96,10 +104,7 @@ public class TableViewController implements Initializable {
             e.printStackTrace();
         }
     }
-    @FXML
-    protected void startDownload() {
 
-    }
 
 
 }

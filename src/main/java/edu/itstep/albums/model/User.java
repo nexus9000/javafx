@@ -1,5 +1,6 @@
 package edu.itstep.albums.model;
 
+import edu.itstep.sql.MySqlOps;
 import edu.itstep.sql.SqlOps;
 
 import java.io.Serializable;
@@ -43,5 +44,9 @@ public class User implements Serializable {
     public boolean isUserAuthenticated(Connection conn)throws SQLException {
         boolean result = SqlOps.checkUserName(conn, userName, password);
         return result;
+    }
+    public String getPassword(Connection conn, String userName) throws SQLException{
+        String password = MySqlOps.getPassword(conn, userName);
+        return password;
     }
 }
