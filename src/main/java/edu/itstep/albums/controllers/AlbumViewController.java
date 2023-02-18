@@ -1,6 +1,8 @@
 package edu.itstep.albums.controllers;
 
 import edu.itstep.albums.model.Albums;
+import edu.itstep.albums.model.ConnectionMySqlDb;
+import edu.itstep.albums.sql.MySqlOps;
 import edu.itstep.sql.SqlOps;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -11,6 +13,7 @@ import javafx.scene.control.TableView;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AlbumViewController implements Initializable {
@@ -43,10 +46,18 @@ public class AlbumViewController implements Initializable {
     @FXML
     protected void startDownload() {
         osList = albumsTable.getItems();
+        ArrayList<Long> listDownload = new ArrayList<>();
         for(Albums album : osList){
             if ((album != null && album.getChecked() != null) &&  album.getChecked().isSelected() ){
-                System.out.println("selected"+ album.getAlbumName());
-            }
+                listDownload.add(album.getId());
+                System.out.println(MySqlOps.userId + " " + album.getAlbumName());
+            }//end if
+        }//for
+        try {
+            ConnectionMySqlDb conn = ConnectionMySqlDb.getInstance();//connection to MySQL
+            MySqlOps.writeToAlbums(conn.getConnectionDB(), listDownload);
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 }

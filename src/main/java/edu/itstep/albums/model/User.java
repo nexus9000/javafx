@@ -1,6 +1,6 @@
 package edu.itstep.albums.model;
 
-import edu.itstep.sql.MySqlOps;
+import edu.itstep.albums.sql.MySqlOps;
 import edu.itstep.sql.SqlOps;
 
 import java.io.Serializable;

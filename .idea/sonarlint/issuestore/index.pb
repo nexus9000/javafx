@@ -13,8 +13,6 @@ w
 G.idea/sonarlint/issuestore/0/b/0be47b3ad73536a09dbd025fa4e0725fe076a224,0\d\0d10e4b9e96a6b8fa561cfaedc49487c7fb2f55a
 w
 G.idea/sonarlint/issuestore/1/c/1c89a5491fbfda3fb050196d6a239f20200296e7,a\2\a23fecf281bfe300797f845cbd9ec9025ab4ec47
-l
-<src/main/java/edu/itstep/albums/model/ConnectionMySqlDb.java,b\2\b21a65eb1abbbb84e90fb716e26f701bfb70c2c2
 _
 /src/main/java/edu/itstep/albums/AlbumsList.java,f\4\f4dbedebff6fed854777aa4f9bd906ba9cb52570
 g
@@ -33,9 +31,5 @@ w
 G.idea/sonarlint/issuestore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648,3\8\38464f72ef55196e32fe4dfbcc50f1cda5f4cb5d
 w
 G.idea/sonarlint/issuestore/d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba,9\d\9db44714da783e82392884aeea0d83f0125570ed
-p
-@src/main/java/edu/itstep/albums/controllers/LogInController.java,0\b\0be47b3ad73536a09dbd025fa4e0725fe076a224
 _
 /src/main/java/edu/itstep/albums/sql/SqlOps.java,6\c\6cdbc74eac48c94f8e558c771896e5cfd1377117
-_
-/src/main/java/edu/itstep/albums/model/User.java,5\6\56f9cdd161a2be8db2c31e9efa2497049a4d3205
